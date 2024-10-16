@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the data
-dataframe = pd.read_csv('/home/carl/Documents/Uni/Mathematische_Anwendungen/Gruppe 5 - Numerische Integration und Normalverteilung-20240930/Thema V - Numerik und Statistik/Programme/Daten_TV.txt', header=None) # just replace my path with yours
+dataframe = pd.read_csv('Daten_TV.txt', header=None) # just replace my path with yours
 
 data_points = dataframe.values  # we want to access the values provided by Gerky
 
