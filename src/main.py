@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the data (adjust the path as needed)
-dataframe = pd.read_csv('/home/carl/Documents/Uni/Mathematische_Anwendungen/Gruppe 5 - Numerische Integration und Normalverteilung-20240930/Thema V - Numerik und Statistik/Programme/Daten_TV.txt', header=None)  # replace with your path
+dataframe = pd.read_csv('src/Daten_TV.txt', header=None)  # just replace with your path
 data_points = dataframe.values
 n = len(data_points)
 
