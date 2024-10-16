@@ -7,7 +7,7 @@ def konfidenz(dateiname, gamma):
     # 2. Berechnung des Mittelwerts
     n = len(A)  # Anzahl der Datenpunkte
     mittelwert = np.sum(A) / n
-    mu = mittelwert  # Mittelwert zur Rückgabe
+    mu = mittelwert  # Mittelwert zur Rückgabe 
     print(f"Mittelwert (mu): {mu}")
     
     # 3. Berechnung der Varianz
