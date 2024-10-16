@@ -1,7 +1,7 @@
 import numpy as np
 
 def konfidenz(dateiname, gamma):
-    # 1. Daten einlesen    
+    # 1. Daten einlesen     
     A = np.loadtxt(dateiname)  # Lädt die Daten aus der Datei 'Daten_TV.txt'
     
     # 2. Berechnung des Mittelwerts
