@@ -37,8 +37,9 @@ Da die Normalverteilung symmetrisch um den Mittelwert $\mu$ ist, lassen sich bes
     \item Etwa 95,45\% der Werte befinden sich im Intervall $[\mu - 2\sigma, \mu + 2\sigma]$, also innerhalb von zwei Standardabweichungen.
     \item Rund 99,73\% der Werte liegen im Intervall $[\mu - 3\sigma, \mu + 3\sigma]$, also innerhalb von drei Standardabweichungen.
 \end{itemize}
-
-Diese Bereiche werden auch als \textit{Empirische Regel} oder \textit{68-95-99,7-Regel} bezeichnet und sind besonders nützlich zur Einschätzung, wie wahrscheinlich es ist, dass eine Zufallsvariable in einem bestimmten Bereich um den Mittelwert liegt. Die Wahrscheinlichkeit, dass ein Wert weiter als $3\sigma$ vom Mittelwert entfernt liegt, ist sehr gering und beträgt nur ca. 0,27\%.
+Diese Bereiche werden auch als \textit{Empirische Regel} oder \textit{68-95-99,7-Regel} bezeichnet und sind besonders nützlich zur Einschätzung, wie wahrscheinlich es ist, dass eine Zufallsvariable in einem bestimmten Bereich um den Mittelwert liegt. Die Wahrscheinlichkeit, dass ein Wert weiter als $3\sigma$ vom Mittelwert entfernt liegt, ist sehr gering und beträgt nur ca. 0,27\%. \\
+In der Praxis wird die Normalverteilung zur Modellierung vieler realer Phänomene verwendet, wie z.B. Fehlerverteilungen, Körpergrößen oder IQ-Werte, da viele natürliche
+Prozesse einem normalverteilten Muster folgen.
 
 
 \subsection{Standardnormalverteilung}
@@ -48,11 +49,23 @@ Eine Normalverteilung lässt sich durch die Standardisierung mit $z = \frac{x - 
 \[
 \phi(z) = \frac{1}{\sqrt{2 \pi}} \cdot \exp\left(-\frac{z^2}{2}\right)
 \]
+Die Standardnormalverteilung ist ein nützliches Werkzeug in der Statistik, da sie es ermöglicht, beliebige Normalverteilungen durch eine Transformation auf diese Standardform zu bringen. Dies wird durch die Berechnung des \textit{z-Scores} erreicht:
+\[
+z = \frac{X - \mu}{\sigma}
+\]
+Der z-Wert gibt an, wie viele Standardabweichungen ein Wert \(X\) vom Mittelwert entfernt ist. Diese Transformation erleichtert die Berechnung von Wahrscheinlichkeiten und statistischen Tests, da die Eigenschaften der Standardnormalverteilung bekannt sind und in Tabellen dokumentiert werden.
+
 
 \subsection{t-Student-Verteilung}
 \label{sec:t_student_distribution}
+Die \textbf{t-Student-Verteilung} wird verwendet, wenn die Stichprobengröße klein ist (\(n < 30\)) und die Varianz der Grundgesamtheit unbekannt ist. Sie ähnelt der Normalverteilung, hat jedoch „schwerere“ Ränder. Dies bedeutet, dass extremere Werte wahrscheinlicher sind als bei der Normalverteilung.
+Die t-Student-Verteilung hat einen Parameter, die Freiheitsgrade \(df\), der die Form der Verteilung bestimmt. Je größer die Freiheitsgrade, desto mehr nähert sich die t-Verteilung der Normalverteilung an. Bei einer großen Stichprobengröße (ca. \(df > 30\)) ist der Unterschied zur Normalverteilung vernachlässigbar.
+In der Statistik wird die t-Verteilung häufig für Hypothesentests verwendet, insbesondere wenn es um kleine Stichproben geht. Sie spielt auch bei der Berechnung von Konfidenzintervallen eine wichtige Rolle, wenn die Varianz der Grundgesamtheit nicht bekannt ist.
 
-\subsection{Chi-Quadrat-Verteilung}
+
+\subsection{$\chi^2$-Verteilung}
 \label{sec:chi_square_distribution}
-
+Die \textbf{$\chi^2$-Verteilung} entsteht als Summe der quadrierten z-Werte aus einer Standardnormalverteilung. Sie wird häufig in der Statistik verwendet, um Varianzen zu schätzen und in Hypothesentests wie dem \textit{Chi²-Anpassungstest} oder dem \textit{Chi²-Test zur Unabhängigkeit}.
+Die Chi²-Verteilung hat einen Parameter, die Freiheitsgrade \(df\), der die Form der Verteilung bestimmt. Sie ist asymmetrisch und nur für positive Werte definiert. Für \(df \geq 30\) nähert sich die Chi²-Verteilung zunehmend der Normalverteilung an.
+Ein häufiges Anwendungsgebiet der Chi²-Verteilung ist die Analyse von Kontingenztafeln, bei denen überprüft wird, ob zwei kategorische Variablen unabhängig voneinander sind.
 
