@@ -1,0 +1,58 @@
+\section{Statistische Grundlagen}
+\label{sec:statistische_grundlagen}
+
+\subsection{Normalverteilung}
+\label{sec:normal_distribution}
+Die Gaußsche Normalverteilung beschreibt die Verteilung einer stetigen Zufallsvariablen und ist durch zwei Parameter, den Mittelwert $\mu$ und die Standardabweichung $\sigma$, charakterisiert. Sie wird auch als \textit{Glockenkurve} bezeichnet und ist symmetrisch um den Mittelwert.
+
+\subsection*{Wichtige Eigenschaften}
+\begin{itemize}
+    \item Die Dichtefunktion der Normalverteilung lautet:
+    \[
+    f(x) = \frac{1}{\sqrt{2 \pi} \sigma} \cdot \exp\left(-\frac{(x - \mu)^2}{2 \sigma^2}\right)
+    \]
+    \item Die Verteilungsfunktion ist gegeben durch:
+    \[
+    \Phi(x) = P(X \leq x) = \int_{-\infty}^{x} f(t) \, dt
+    \]
+    \item Die Normalverteilung ist symmetrisch zum Mittelwert $\mu$, hat ein Maximum bei $x = \mu$ und Wendepunkte bei $x = \mu \pm \sigma$.
+    \item Sie ist normiert, d.h., das Integral über die gesamte Dichtefunktion ergibt 1:
+    \[
+    \int_{-\infty}^{\infty} f(x) \, dx = 1
+    \]
+\end{itemize}
+
+\subsection*{Berechnung der Wahrscheinlichkeiten}
+Für die Berechnung von Wahrscheinlichkeiten, die der Gaußschen Normalverteilung folgen, werden in der Praxis oft Tabellen oder numerische Verfahren verwendet, da die Integrale analytisch nicht lösbar sind. Die Wahrscheinlichkeit für einen Bereich $a \leq X \leq b$ kann mit der Verteilungsfunktion berechnet werden:
+\[
+P(a \leq X \leq b) = \Phi\left(\frac{b - \mu}{\sigma}\right) - \Phi\left(\frac{a - \mu}{\sigma}\right)
+\]
+
+\subsection*{Wahrscheinlichkeiten in Abhängigkeit der Standardabweichung}
+
+Da die Normalverteilung symmetrisch um den Mittelwert $\mu$ ist, lassen sich bestimmte Wahrscheinlichkeitsbereiche in Abhängigkeit von der Standardabweichung $\sigma$ um $\mu$ angeben:
+
+\begin{itemize}
+    \item Etwa 68,27\% aller Werte einer normalverteilten Zufallsvariablen liegen im Intervall $[\mu - \sigma, \mu + \sigma]$, also innerhalb einer Standardabweichung um den Mittelwert.
+    \item Etwa 95,45\% der Werte befinden sich im Intervall $[\mu - 2\sigma, \mu + 2\sigma]$, also innerhalb von zwei Standardabweichungen.
+    \item Rund 99,73\% der Werte liegen im Intervall $[\mu - 3\sigma, \mu + 3\sigma]$, also innerhalb von drei Standardabweichungen.
+\end{itemize}
+
+Diese Bereiche werden auch als \textit{Empirische Regel} oder \textit{68-95-99,7-Regel} bezeichnet und sind besonders nützlich zur Einschätzung, wie wahrscheinlich es ist, dass eine Zufallsvariable in einem bestimmten Bereich um den Mittelwert liegt. Die Wahrscheinlichkeit, dass ein Wert weiter als $3\sigma$ vom Mittelwert entfernt liegt, ist sehr gering und beträgt nur ca. 0,27\%.
+
+
+\subsection{Standardnormalverteilung}
+\label{sec:standard_normal_distribution}
+
+Eine Normalverteilung lässt sich durch die Standardisierung mit $z = \frac{x - \mu}{\sigma}$ auf die sogenannte Standardnormalverteilung $\mathcal{N}(0, 1)$ zurückführen, die Mittelwert 0 und Standardabweichung 1 hat:
+\[
+\phi(z) = \frac{1}{\sqrt{2 \pi}} \cdot \exp\left(-\frac{z^2}{2}\right)
+\]
+
+\subsection{t-Student-Verteilung}
+\label{sec:t_student_distribution}
+
+\subsection{Chi-Quadrat-Verteilung}
+\label{sec:chi_square_distribution}
+
+
