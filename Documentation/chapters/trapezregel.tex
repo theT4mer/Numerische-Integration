@@ -10,7 +10,6 @@
     \caption{Keplersche Fassregel \cite{skript}}    
     \label{fig:keplersche_fassregel}
 \end{figure}
-
 Wir betrachten eine Funktion $f$, deren Schaubild im gewünschten Intervall $I = [a, b]$ in \autoref{fig:sehnentrapeze} gezeigt ist.
 
 \begin{figure}[!tbp]
@@ -103,38 +102,3 @@ Das Vertrauensniveau \(\gamma\) ist ein Konzept, das angibt, wie sicher wir sind
     \item \textbf{Berechnung:} Das Vertrauensniveau wird verwendet, um kritische Werte zu bestimmen, die notwendig sind, um das Konfidenzintervall zu berechnen. Beispielsweise erfordert ein 95\%-Konfidenzintervall die Verwendung eines spezifischen z-Werts aus der Normalverteilung, um den Bereich zu bestimmen, in dem der wahre Parameter mit 95\%iger Sicherheit liegt.
 \end{itemize}
 Insgesamt ist das Vertrauensniveau \(\gamma\) ein zentrales Element statistischer Analysen. Es ermöglicht uns, die Unsicherheit in unseren Schätzungen zu quantifizieren und zu kommunizieren.
-
-\subsection{Alternativen zur Trapezregel} 
-\label{sec:alternativen}
-Es gibt mehrere alternative Methoden zur numerischen Integration, die oft genauer oder effizienter sind als die Trapezregel. Hier sind einige gängige Alternativen:
-
-\subsection*{Simpsonregel}
-Die \textbf{Simpsonregel} ist eine weit verbreitete Methode zur numerischen Integration, die die Fläche unter einer Kurve mithilfe von Parabeln approximiert. Sie ist genauer als die Trapezregel, insbesondere bei glatten Funktionen. Es gibt zwei Hauptvarianten:
-
-\begin{itemize}
-    \item \textbf{Einfaches Simpsonverfahren}: Hierbei wird das Intervall in eine gerade Anzahl von Teilintervallen unterteilt, und die Fläche unter der Funktion wird durch Parabeln approximiert.
-    \[
-    \int_{a}^{b} f(x) \,dx \approx \frac{h}{3} \left( f(a) + 4f\left(\frac{a+b}{2}\right) + f(b) \right)
-    \]
-    wobei \(h = \frac{b-a}{2}\) die Breite des Intervalls ist.
-    
-    \item \textbf{Simpson 3/8-Regel}: Diese Methode verwendet drei Teilintervalle und hat eine ähnliche Formel, bietet jedoch höhere Genauigkeit für bestimmte Funktionen.
-\end{itemize}
-
-\subsection*{Romberg-Integration}
-Die \textbf{Romberg-Integration} kombiniert die Trapezregel mit einer Fehlerabschätzung und verwendet eine extrapolative Technik, um die Genauigkeit zu erhöhen. Sie berechnet die Trapezregel für verschiedene Schrittweiten und verwendet diese Werte, um eine genauere Schätzung zu erhalten. Dies geschieht durch wiederholte Anwendung der Trapezregel und die Verwendung von Richardson-Extrapolation.
-
-\subsection*{Monte-Carlo-Integration}
-Die \textbf{Monte-Carlo-Integration} ist eine probabilistische Methode zur numerischen Integration. Sie eignet sich gut für mehrdimensionale Integrale und komplizierte Regionen. Dabei werden zufällige Punkte im Integrationsbereich erzeugt, und die Funktionswerte an diesen Punkten werden zur Schätzung des Integrals verwendet.
-
-\subsection*{Gauss-Quadratur}
-Die \textbf{Gauss-Quadratur} ist eine sehr präzise Methode zur numerischen Integration, die spezifische Punkte (Wurzeln) und Gewichte verwendet, um die Integrationsgenauigkeit zu maximieren. Bei der Gauss-Legendre-Quadratur werden die Wurzeln der Legendre-Polynome verwendet, um das Integral zu approximieren.
-
-\[
-\int_{a}^{b} f(x) \,dx \approx \sum_{i=1}^{n} w_i f(x_i)
-\]
-wobei \(w_i\) die Gewichte und \(x_i\) die Wurzeln der Legendre-Polynome sind.
-
-\subsection*{Adaptive Integration}
-\textbf{Adaptive Integrationsmethoden} passen die Schrittweite dynamisch an die Funktion an. Bei diesen Methoden wird die Funktion in Abschnitten integriert, und die Intervallbreite wird verringert, wenn die Funktion starke Änderungen aufweist. Ein Beispiel ist die adaptive Simpsonregel.
-

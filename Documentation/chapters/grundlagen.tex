@@ -58,13 +58,23 @@ Der z-Wert gibt an, wie viele Standardabweichungen ein Wert \(X\) vom Mittelwert
 
 \subsection{t-Student-Verteilung}
 \label{sec:t_student_distribution}
-Die \textbf{t-Student-Verteilung} wird verwendet, wenn die Stichprobengröße klein ist (\(n < 30\)) und die Varianz der Grundgesamtheit unbekannt ist. Sie ähnelt der Normalverteilung, hat jedoch „schwerere“ Ränder. Dies bedeutet, dass extremere Werte wahrscheinlicher sind als bei der Normalverteilung.
+Die standardisierte Schätzfunktion des Stichprobenmittelwerts normalverteilter Daten ist nicht mehr normalverteilt, sondern \(t\)-verteilt, wenn die zur Standardisierung des Mittelwerts benötigte Varianz des Merkmals unbekannt ist und mit der Stichprobenvarianz geschätzt werden muss. Seine \(t\)-Verteilung ermöglicht die Berechnung der Verteilung der Differenz zwischen dem Mittelwert der Stichprobe und dem wahren Mittelwert der Grundgesamtheit. \\
+Die \(t\)-Werte hängen vom Signifikanzniveau sowie von der Stichprobengröße \(n\) ab und bestimmen das Vertrauensintervall sowie die Aussagekraft der Schätzung des Mittelwertes. Die \(t\)-Verteilung wird mit wachsendem \(n\) schmaler und konvergiert für \(n \to \infty\) zur Standardnormalverteilung. Hypothesentests, bei denen die \(t\)-Verteilung Verwendung findet, bezeichnet man als \(t\)-Tests. \cite{studenten_t_verteilung}\\
+Die t-Student-Verteilung wird verwendet, wenn die Stichprobengröße klein ist (\(n < 30\)) und die Varianz der Grundgesamtheit unbekannt ist. Sie ähnelt der Normalverteilung, hat jedoch „schwerere“ Ränder. Dies bedeutet, dass extremere Werte wahrscheinlicher sind als bei der Normalverteilung.
 Die t-Student-Verteilung hat einen Parameter, die Freiheitsgrade \(df\), der die Form der Verteilung bestimmt. Je größer die Freiheitsgrade, desto mehr nähert sich die t-Verteilung der Normalverteilung an. Bei einer großen Stichprobengröße (ca. \(df > 30\)) ist der Unterschied zur Normalverteilung vernachlässigbar.
-In der Statistik wird die t-Verteilung häufig für Hypothesentests verwendet, insbesondere wenn es um kleine Stichproben geht. Sie spielt auch bei der Berechnung von Konfidenzintervallen eine wichtige Rolle, wenn die Varianz der Grundgesamtheit nicht bekannt ist.
+In der Statistik wird die t-Verteilung häufig für Hypothesentests verwendet. Sie spielt auch bei der Berechnung von Konfidenzintervallen eine wichtige Rolle, wenn die Varianz der Grundgesamtheit nicht bekannt ist.
 
 
 \subsection{$\chi^2$-Verteilung}
 \label{sec:chi_square_distribution}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=8cm]{Bilder/chi^2-distribution.png}
+    \caption{
+        Weitere Einzelheiten
+        Dichten der Chi-Quadrat-Verteilung mit unterschiedlicher Anzahl an Freiheitsgraden k \cite{chi^2_distribution}}    
+    \label{fig:keplersche_fassregel}
+\end{figure}
 Die \textbf{$\chi^2$-Verteilung} entsteht als Summe der quadrierten z-Werte aus einer Standardnormalverteilung. Sie wird häufig in der Statistik verwendet, um Varianzen zu schätzen und in Hypothesentests wie dem \textit{Chi²-Anpassungstest} oder dem \textit{Chi²-Test zur Unabhängigkeit}.
 Die Chi²-Verteilung hat einen Parameter, die Freiheitsgrade \(df\), der die Form der Verteilung bestimmt. Sie ist asymmetrisch und nur für positive Werte definiert. Für \(df \geq 30\) nähert sich die Chi²-Verteilung zunehmend der Normalverteilung an.
 Ein häufiges Anwendungsgebiet der Chi²-Verteilung ist die Analyse von Kontingenztafeln, bei denen überprüft wird, ob zwei kategorische Variablen unabhängig voneinander sind.

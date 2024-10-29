@@ -40,5 +40,5 @@ def konfidenz(dateiname, gamma):
     return mu, oben, unten, varianz, c
 
 # Testaufruf der Funktion
-mu, oben, unten, varianz, c = konfidenz('Daten_TV.txt', 0.99)
+mu, oben, unten, varianz, c = konfidenz('src/Daten_TV.txt', 0.99)
 print(f"Konfidenzintervall: ({unten}, {oben})")

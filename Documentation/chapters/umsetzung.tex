@@ -2,8 +2,38 @@
 \section{Umsetzung im Programm}
 \label{sec:umsetzung_im_programm}
 
-\subsection{Programmablauf}
-\label{sec:programmablauf}
+\subsection{Berechnung des Mittelwerts}
+Der Mittelwert (\(\mu\)) der Daten wird berechnet, indem die Summe aller Datenpunkte durch die Anzahl der Punkte (\(n\)) geteilt wird:
+\[
+\mu = \frac{1}{n} \sum_{i=1}^{n} A_i
+\]
 
-\subsection{Konfidenzintervall}
-\label{sec:konfidenzintervall}
+\subsection{Berechnung der Varianz}
+Die Varianz (\(\sigma^2\)) wird berechnet, um zu messen, wie die Daten um den Mittelwert streuen. Der Code verwendet die Formel für die erwartungstreue Varianz:
+\[
+\sigma^2 = \frac{1}{n-1} \sum_{i=1}^{n} (A_i - \mu)^2
+\]
+Die Verwendung von \(n-1\) anstelle von \(n\) ist wichtig, um eine Verzerrung der Schätzung zu vermeiden (Bessel-Korrektur).
+
+\subsection{Berechnung der Konstante \(c\) durch numerische Integration}
+Der Code verwendet die Trapezregel, um die Fläche unter der Standardnormalverteilung zu berechnen. Die Trapezregel ist eine numerische Methode zur Approximation des Integrals einer Funktion.
+
+\subsubsection{Ziel der Berechnung}
+Die Fläche unter der Standardnormalverteilung wird so lange berechnet, bis sie einen bestimmten Zielwert erreicht, der durch \((\gamma + 1) / 2\) definiert ist. Dies entspricht dem gewünschten Konfidenzniveau (z. B. 99\% oder 0,99).
+
+\subsubsection{Funktion der Standardnormalverteilung}
+Die Funktion \texttt{standardnormalverteilung(x)} berechnet den Wert der Standardnormalverteilung für einen gegebenen Wert \(x\):
+\[
+f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}
+\]
+
+\subsection{Berechnung des Konfidenzintervalls}
+Nach der Berechnung der Konstante \(c\) wird das Konfidenzintervall mit der folgenden Formel berechnet:
+\[
+\text{Oben} = \mu + c \cdot \sqrt{\frac{\sigma^2}{n}}
+\]
+\[
+\text{Unten} = \mu - c \cdot \sqrt{\frac{\sigma^2}{n}}
+\]
+Dies gibt das Konfidenzintervall an, in dem mit einer bestimmten Wahrscheinlichkeit (z.B. 99\%) der wahre Mittelwert der Grundgesamtheit liegt.
+
