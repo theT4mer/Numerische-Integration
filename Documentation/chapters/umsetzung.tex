@@ -1,6 +1,6 @@
 \section{Umsetzung im Programm}
 \label{sec:umsetzung_im_programm}
-
+Die Umsetzung des Programms erfolgt in Python mithilfe von numpy. Der Code ist in der Datei \texttt{huierfhierfherf.py} zu finden. Die Berechnung des Mittelwertes, der Grenzen des Konfidenzintervalls, der Varianz $\sigma^2$ und der Konstante $c$ erfolgt in der Funktion \texttt{konfidenz(dateiname, gamma)}.
 \subsection{Berechnung des Mittelwerts}
 Der Mittelwert (\(\mu\)) der Daten wird berechnet, indem die Summe aller Datenpunkte durch die Anzahl der Punkte (\(n\)) geteilt wird:
 \[
@@ -8,17 +8,16 @@ Der Mittelwert (\(\mu\)) der Daten wird berechnet, indem die Summe aller Datenpu
 \]
 
 \subsection{Berechnung der Varianz}
-Die Varianz (\(\sigma^2\)) wird berechnet, um zu messen, wie die Daten um den Mittelwert streuen. Der Code verwendet die Formel für die erwartungstreue Varianz:
+Die Varianz (\(\sigma^2\)) wird berechnet, um zu messen, wie die Daten um den Mittelwert streuen. Der Code verwendet folgende Formel für die erwartungstreue Varianz:
 \[
 \sigma^2 = \frac{1}{n-1} \sum_{i=1}^{n} (A_i - \mu)^2
 \]
-Die Verwendung von \(n-1\) anstelle von \(n\) ist wichtig, um eine Verzerrung der Schätzung zu vermeiden (Bessel-Korrektur).
 
 \subsection{Berechnung der Konstante \(c\) durch numerische Integration}
-Der Code verwendet die Trapezregel, um die Fläche unter der Standardnormalverteilung zu berechnen. Die Trapezregel ist eine numerische Methode zur Approximation des Integrals einer Funktion.
+Der Code verwendet die Trapezregel, um die Fläche unter der Standardnormalverteilung zu berechnen. Die Formel wird in \autoref{sec:herleitung} hergeleitet.
 
 \subsubsection{Ziel der Berechnung}
-Die Fläche unter der Standardnormalverteilung wird so lange berechnet, bis sie einen bestimmten Zielwert erreicht, der durch \((\gamma + 1) / 2\) definiert ist. Dies entspricht dem gewünschten Konfidenzniveau (z. B. 99\% oder 0,99).
+Die Fläche unter der Standardnormalverteilung wird so lange berechnet, bis sie einen bestimmten Zielwert erreicht, der durch \((\gamma + 1) / 2\) definiert ist. Dies entspricht dem gewünschten Konfidenzniveau (hier gewählt als 99\% $\vee$ 0,99).
 
 \subsubsection{Funktion der Standardnormalverteilung}
 Die Funktion \texttt{standardnormalverteilung(x)} berechnet den Wert der Standardnormalverteilung für einen gegebenen Wert \(x\):
@@ -34,5 +33,5 @@ Nach der Berechnung der Konstante \(c\) wird das Konfidenzintervall mit der folg
 \[
 \text{Unten} = \mu - c \cdot \sqrt{\frac{\sigma^2}{n}}
 \]
-Dies gibt das Konfidenzintervall an, in dem mit einer bestimmten Wahrscheinlichkeit (z.B. 99\%) der wahre Mittelwert der Grundgesamtheit liegt.
+Damit können wir die beiden Grenzen des Konfidenzintervalls herausfinden, zwischen denen mit einer bestimmten Wahrscheinlichkeit (von uns gewählt als 99\%) der wahre Mittelwert der Grundgesamtheit liegt.
 
