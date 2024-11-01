@@ -10,7 +10,7 @@ Diese brauche wir zur numerischen Integration, beipielweise um Warscheinlichkeit
     \caption{Keplersche Fassregel \cite{skript}}    
     \label{fig:keplersche_fassregel}
 \end{figure}
-Wir betrachten eine Funktion $f$, deren Schaubild im gewünschten Intervall $I = [a, b]$ in \autoref{fig:sehnentrapeze} gezeigt ist.
+Wir betrachten eine Funktion $f$, deren Schaubild im gewünschten Intervall $I = [a, b]$ in \autoref{fig:sehnentrapeze_eins} gezeigt ist.
 
 \begin{figure}[!tbp]
     \centering
@@ -29,13 +29,13 @@ Wir betrachten eine Funktion $f$, deren Schaubild im gewünschten Intervall $I =
   \end{figure}
 \subsection*{A. Die zwei Sehnentrapeze}
 
-Zur Flächenberechnung zeichnen wir zwei Sehnentrapeze in das gegebene Schaubild, wie in \autoref{fig:sehnentrapeze} zu sehen ist. Für die Fläche eines Trapezes mit den Grundseiten $a$ und $c$ und der Höhe $h$ gilt:
+Zur Flächenberechnung zeichnen wir zwei Sehnentrapeze in das gegebene Schaubild, wie in \autoref{fig:sehnentrapeze_eins} zu sehen ist. Für die Fläche eines Trapezes mit den Grundseiten $a$ und $b$ und der Höhe $h$ gilt:
 \[
-A_{\text{Trapez}} = \frac{a + c}{2} \cdot h = m \cdot h
+A_{\text{Trapez}} = \frac{a + b}{2} \cdot h = m \cdot h
 \]
 Übertragen auf die beiden Sehnentrapeze aus \autoref{fig:sehnentrapeze_eins} ergibt sich die Gesamtfläche $S$ als:
 \[
-S = \frac{b - a}{2} \cdot \left(\frac{f(a)}{2} + f\left(\frac{a + b}{2}\right) + \frac{f(b)}{2}\right)
+S = \frac{b - a}{2} \cdot \left( \frac{f(a) + f\left( \frac{a + b}{2} \right)}{2} + \frac{f(b) + f\left( \frac{a + b}{2} \right)}{2} \right)
 \]
 \[
   \Leftrightarrow S = \frac{b - a}{2} \cdot \left(\frac{f(a)}{2} + f\left(\frac{a + b}{2}\right) + \frac{f(b)}{2}\right)

@@ -15,11 +15,11 @@ Die Gaußsche Normalverteilung beschreibt die Verteilung einer stetigen Zufallsv
 \begin{itemize}
     \item Die Dichtefunktion der Normalverteilung lautet:
     \[
-    f(x \mid \mu, \sigma^2) = \frac{1}{\sigma \sqrt{2 \pi}} \, e^{-\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2}.
+    \varphi(u) = \frac{1}{\sqrt{2 \pi}} \cdot \exp\left( -\frac{1}{2} \cdot u^2 \right) \quad (-\infty < u < \infty)
     \]
     \item Die Verteilungsfunktion ist gegeben durch:
     \[
-    \Phi(x) = P(X \leq x) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{x} e^{-\frac{1}{2} t^2} \, \mathrm{d}t.
+    \Phi(u) = P(U \leq u) = \frac{1}{\sqrt{2 \pi}} \cdot \int_{-\infty}^{\infty} \exp\left( -\frac{1}{2} \cdot t^2 \right) \, dt
     \]
     \item Die Normalverteilung ist symmetrisch zum Mittelwert $\mu$, hat ein Maximum bei $x = \mu$ und Wendepunkte bei $x = \mu \pm \sigma$.
     \item Sie ist normiert, d.h., das Integral über die gesamte Dichtefunktion ergibt 1:

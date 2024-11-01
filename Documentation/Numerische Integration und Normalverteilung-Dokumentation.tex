@@ -19,7 +19,16 @@
 \usepackage{enumitem}
 \usepackage{float} 
 \usepackage{graphicx}
-\addbibresource{MyBibliography.bib} % Ort der .bib Datei, die die Datenbank für Literatur/Referenzen enthält.
+\addbibresource{MyBibliography.bib} % Ort der .bib Datei, die die Datenbank für Literatur/ Referenzen enthält.
+
+% Redefine names for figures, tables, and contents
+\addto\captionsngerman{
+  \renewcommand{\figureautorefname}{Abbildung} 
+  \renewcommand{\sectionautorefname}{Kapitel} 
+  \renewcommand{\subsectionautorefname}{Unterkapitel} 
+}
+\selectlanguage{ngerman}
+
 
 \graphicspath{{Bilder/}}
 
