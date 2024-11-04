@@ -18,7 +18,17 @@
 \usepackage{fancyhdr}
 \usepackage{enumitem}
 \usepackage{float} 
-\addbibresource{MyBibliography.bib} % Ort der .bib Datei, die die Datenbank für Literatur/Referenzen enthält.
+\usepackage{graphicx}
+\addbibresource{MyBibliography.bib} % Ort der .bib Datei, die die Datenbank für Literatur/ Referenzen enthält.
+
+% Redefine names for figures, tables, and contents
+\addto\captionsngerman{
+  \renewcommand{\figureautorefname}{Abbildung} 
+  \renewcommand{\sectionautorefname}{Kapitel} 
+  \renewcommand{\subsectionautorefname}{Unterkapitel} 
+}
+\selectlanguage{ngerman}
+
 
 \graphicspath{{Bilder/}}
 
@@ -32,12 +42,13 @@
 \fancyhfoffset[R]{1cm} % right extra length
 \rhead{\today}
 \lhead{Numerische Integration und Normalverteilung}
+\fancyfoot[C]{\thepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %
 \titlehead{\includegraphics[width=5cm]{dhbw.pdf}}
 \title{Numerische Integration und Normalverteilung}
-\author{Carl-Ferdinand Oliver\thanks{\href{mailto:es23035@lehre.dhbw-stuttgart.de}{es23035@lehre.dhbw-stuttgart.de}}, tragt euch hier ein\\TES23}
+\author{Carl-Ferdinand Oliver\thanks{\href{mailto:es23035@lehre.dhbw-stuttgart.de}{es23035@lehre.dhbw-stuttgart.de}}, Tom Springer \thanks{\href{mailto:es23026@lehre.dhbw-stuttgart.de}{es23026@lehre.dhbw-stuttgart.de}}, Jonas Münz \thanks{\href{mailto:es23039@lehre.dhbw-stuttgart.de}{es23039@lehre.dhbw-stuttgart.de}}, \\ Max Valentin Orlemann \thanks{\href{mailto:es23023@lehre.dhbw-stuttgart.de}{es23023@lehre.dhbw-stuttgart.de}}, Alexander Kögel \thanks{\href{mailto:es23031@lehre.dhbw-stuttgart.de}{es23031@lehre.dhbw-stuttgart.de}}\\TES23}
 \date{\today}
 \maketitle
 \vfill
@@ -52,10 +63,19 @@
 \newpage
 %
 %
-\section{bla bla bla}
-\label{bla bla}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Statistische Grundlagen
+\input{chapters/grundlagen.tex}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Statistische Grundlagen
+\input{chapters/trapezregel.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Statistische Grundlagen
+\input{chapters/umsetzung.tex}
 %
 \printbibliography[]
 \vfill

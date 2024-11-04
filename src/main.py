@@ -1,21 +1,45 @@
-# you might have to install these three dependencies manually, just google them
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 
-# Load the data
-dataframe = pd.read_csv('Daten_TV.txt', header=None) # just replace my path with yours
+def konfidenz(dateiname, gamma):
+    # 1. Daten einlesen
+    A = np.loadtxt(dateiname)  # Lädt die Daten aus der Datei 'Daten_TV.txt'
+    
+    # 2. Berechnung des Mittelwerts
+    n = len(A)  # Anzahl der Datenpunkte
+    mittelwert = np.sum(A) / n
+    mu = mittelwert  # Mittelwert zur Rückgabe
+    print(f"Mittelwert (mu): {mu}")
+    
+    # 3. Berechnung der Varianz
+    varianz = np.sum((A - mittelwert) ** 2) / (n - 1)  # erwartungstreue Varianz
+    print(f"Varianz (sigma^2): {varianz}")
+    
+    # 4. Numerische Integration mit der Trapezregel (berechne Konstante c)
+    flaeche = 0.5
+    start = 0
+    ende = 0.001  # Schrittweite
+    gesucht = (gamma + 1) / 2  # Zielwert
+    
+    # Funktion für die Standardnormalverteilung
+    def standardnormalverteilung(x):
+        return (1 / np.sqrt(2 * np.pi)) * np.exp(-0.5 * x ** 2)
+    
+    # Trapezregel zur Berechnung des Integrals der Standardnormalverteilung
+    while flaeche < gesucht:
+        flaeche += (ende - start) / 2 * (standardnormalverteilung(start) + standardnormalverteilung(ende))
+        start += 0.001
+        ende += 0.001
+    
+    c = start  # das gesuchte c
+    print(f"Konstante c (aus der Trapezregel): {c}")
 
-data_points = dataframe.values  # we want to access the values provided by Gerky
+    # 5. Berechnung des Konfidenzintervalls
+    oben = mu + c * np.sqrt(varianz / n)
+    unten = mu - c * np.sqrt(varianz / n)
+    
+    return mu, oben, unten, varianz, c
 
-# for debugging purposes only, you can commt this out but it does not hurt
-for i in range(0, len(data_points)):
-    print(data_points[i]) 
+# Testaufruf der Funktion
+mu, oben, unten, varianz, c = konfidenz('src/Daten_TV.txt', 0.99)
+print(f"Konfidenzintervall: ({unten}, {oben})")
 
-plt.figure(figsize=(10, 6))
-plt.plot(range(len(data_points)), data_points, 'ro') 
-plt.xlabel('Index')
-plt.ylabel('Beatiful Values')
-plt.title("Gerky's great and wonderful data")
-plt.grid()
-plt.show()
